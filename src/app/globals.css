@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, :root[data-theme="dark"] {
+    /* Backgrounds */
+    --color-bg-void:        #000000;
+    --color-bg-deep:        #010b13;
+    --color-bg-surface:     #061219;
+    --color-bg-elevated:    #0a1f2e;
+    --color-bg-grid-cell:   #001515;
+
+    /* Grid Lines */
+    --color-grid-line:      #00f5ff14;
+    --color-grid-bright:    #00f5ff35;
+    --color-grid-horizon:   #00f5ff60;
+
+    /* Accent — Cyan Family */
+    --color-accent-primary:   #00f5ff;
+    --color-accent-secondary: #0ff0fc;
+    --color-accent-hot:       #00ffcc;
+    --color-accent-warm:      #00e5d4;
+    --color-accent-dim:       #007a88;
+
+    /* Glow Layers */
+    --glow-xs:   0 0 4px #00f5ff60;
+    --glow-sm:   0 0 8px #00f5ff80, 0 0 16px #00f5ff40;
+    --glow-md:   0 0 12px #00f5ffaa, 0 0 30px #00f5ff60, 0 0 60px #00f5ff20;
+    --glow-lg:   0 0 20px #00f5ff, 0 0 60px #00f5ff80, 0 0 120px #00f5ff30;
+    --glow-text: 0 0 10px #00f5ffcc, 0 0 20px #00f5ff80;
+
+    /* Energy Trail */
+    --color-trail-core:     #00f5ff;
+    --color-trail-mid:      #00f5ff80;
+    --color-trail-fade:     #00f5ff00;
+
+    /* Text */
+    --color-text-primary:   #e0fbfc;
+    --color-text-secondary: #7ecfcf;
+    --color-text-muted:     #3a7a7a;
+    --color-text-accent:    #00f5ff;
+
+    /* Status */
+    --color-success:        #00ff88;
+    --color-error:          #ff3355;
+    --color-warning:        #ffaa00;
+  }
+
+  :root[data-theme="light"] {
+    --color-bg-void:        #f0f8ff;
+    --color-bg-deep:        #e1f0fa;
+    --color-bg-surface:     #d6eaf8;
+    --color-bg-elevated:    #c5ddf0;
+    --color-bg-grid-cell:   #ddf0fc;
+
+    --color-grid-line:      #0057ff12;
+    --color-grid-bright:    #0057ff30;
+    --color-grid-horizon:   #0057ff55;
+
+    --color-accent-primary:   #0057ff;
+    --color-accent-secondary: #0080ff;
+    --color-accent-hot:       #0040cc;
+    --color-accent-warm:      #1a6fff;
+    --color-accent-dim:       #7aacff;
+
+    --glow-xs:   0 0 4px #0057ff40;
+    --glow-sm:   0 0 8px #0057ff60, 0 0 16px #0057ff30;
+    --glow-md:   0 0 12px #0057ff80, 0 0 30px #0057ff40, 0 0 60px #0057ff15;
+    --glow-lg:   0 0 20px #0057ffcc, 0 0 60px #0057ff60, 0 0 120px #0057ff20;
+    --glow-text: 0 0 10px #0057ff99, 0 0 20px #0057ff50;
+
+    --color-trail-core:     #0057ff;
+    --color-trail-mid:      #0057ff80;
+    --color-trail-fade:     #0057ff00;
+
+    --color-text-primary:   #0a0e1a;
+    --color-text-secondary: #1a3a6a;
+    --color-text-muted:     #6a90bb;
+    --color-text-accent:    #0057ff;
+
+    --color-success:        #00aa55;
+    --color-error:          #cc1133;
+    --color-warning:        #cc7700;
+  }
+
+  :root {
+    /* Fonts variables will be injected by Next.js in layout */
+
+    /* Type Scale */
+    --text-xs:     0.75rem;
+    --text-sm:     0.875rem;
+    --text-base:   1rem;
+    --text-md:     1.125rem;
+    --text-lg:     1.25rem;
+    --text-xl:     1.5rem;
+    --text-2xl:    2rem;
+    --text-3xl:    2.5rem;
+    --text-4xl:    clamp(2.5rem, 5vw, 4rem);
+    --text-hero:   clamp(3.5rem, 8vw, 7rem);
+
+    /* Letter Spacing */
+    --tracking-tron:   0.15em;
+    --tracking-tight:  -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide:   0.05em;
+
+    /* Line Height */
+    --leading-tight:  1.1;
+    --leading-snug:   1.3;
+    --leading-normal: 1.5;
+    --leading-loose:  1.8;
+
+    /* Spacing Scale */
+    --space-1:    4px;
+    --space-2:    8px;
+    --space-3:    12px;
+    --space-4:    16px;
+    --space-5:    20px;
+    --space-6:    24px;
+    --space-8:    32px;
+    --space-10:   40px;
+    --space-12:   48px;
+    --space-16:   64px;
+    --space-20:   80px;
+    --space-24:   96px;
+    --space-32:   128px;
+
+    /* Section Padding */
+    --section-pad-y:    clamp(80px, 12vh, 160px);
+    --section-pad-x:    clamp(20px, 5vw, 80px);
+
+    /* Container */
+    --max-width:         1400px;
+    --max-width-text:    720px;
+    --max-width-narrow:  560px;
+
+    /* Grid */
+    --grid-cell-size:    60px;
+    --grid-perspective:  800px;
+    --grid-vanish-y:     60%;
+
+    /* Border Radius */
+    --radius-sm:   2px;
+    --radius-md:   4px;
+    --radius-lg:   8px;
+    --radius-pill: 999px;
+
+    /* Borders */
+    --border-thin:   1px solid var(--color-accent-primary);
+    --border-thick:  2px solid var(--color-accent-primary);
+    --border-glow:   1px solid var(--color-accent-primary);
+
+    /* Z-Index Stack */
+    --z-grid:        0;
+    --z-content:     10;
+    --z-bike:        20;
+    --z-overlay:     30;
+    --z-nav:         40;
+    --z-cursor:      50;
+    --z-preloader:   100;
+
+    /* Durations */
+    --duration-instant:  50ms;
+    --duration-fast:     150ms;
+    --duration-normal:   300ms;
+    --duration-slow:     600ms;
+    --duration-slower:   1000ms;
+    --duration-cinematic: 2000ms;
+
+    /* Easing */
+    --ease-tron:     cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+    --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+    --ease-inout:    cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-linear:   linear;
+  }
+
+  body {
+    background-color: transparent; /* ALLOW 3D CANVAS TO BE THE BACKGROUND */
+    color: var(--color-text-primary);
+    font-family: var(--font-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Hide cursor globally for custom cursor */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* =========================================
+   CUSTOM TRON CURSOR SYSTEMS
+   ========================================= */
+.cursor-orb {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent-primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: screen;
+  box-shadow: 0 0 10px var(--color-accent-primary), 0 0 20px var(--color-accent-primary);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--color-accent-primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: screen;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
+  will-change: transform;
+}
+.cursor-ring.hovering {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 245, 255, 0.1);
+  border-color: var(--color-accent-hot);
+  box-shadow: inset 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+.cursor-shockwave {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--color-accent-hot);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  opacity: 0;
+  transform: scale(0);
+}
+.cursor-shockwave.active {
+  animation: shockwave 0.5s ease-out forwards;
+}
+@keyframes shockwave {
+  0% { transform: scale(0.2); opacity: 1; border-width: 4px; }
+  100% { transform: scale(1.5); opacity: 0; border-width: 0px; }
+}
+
+/* =========================================
+   CRT SCANLINE & NOISE OVERLAYS
+   ========================================= */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1)
+  );
+  background-size: 100% 4px;
+}
